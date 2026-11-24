@@ -34,3 +34,7 @@ dist-ssr
 *.py
 qb_page_*.png
 test_0.png
+
+__pycache__/
+*.pyc
+*.tsbuildinfo
