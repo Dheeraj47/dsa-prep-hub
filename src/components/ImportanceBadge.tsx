@@ -1,0 +1,83 @@
+import React from 'react';
+import type { ImportanceLevel, SourceType } from '../types';
+import { Award, Star, BookOpen, Briefcase, Landmark, CheckCircle2 } from 'lucide-react';
+
+interface ImportanceBadgeProps {
+  importance: ImportanceLevel;
+  className?: string;
+}
+
+export const ImportanceBadge: React.FC<ImportanceBadgeProps> = ({ importance, className = '' }) => {
+  switch (importance) {
+    case 'VERY_IMPORTANT':
+      return (
+        <span
+          className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-900/80 ${className}`}
+          title="High-yield recurring university examination question"
+        >
+          <Award className="w-3.5 h-3.5 text-rose-500" />
+          VERY IMPORTANT
+        </span>
+      );
+    case 'IMPORTANT':
+      return (
+        <span
+          className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-900/80 ${className}`}
+          title="Important core conceptual exam topic"
+        >
+          <Star className="w-3.5 h-3.5 text-amber-500" />
+          IMPORTANT
+        </span>
+      );
+    case 'PRACTICE':
+      return (
+        <span
+          className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-sky-50 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-900/80 ${className}`}
+          title="Practice and conceptual depth problem"
+        >
+          <BookOpen className="w-3.5 h-3.5 text-sky-500" />
+          PRACTICE
+        </span>
+      );
+    case 'CASE_STUDY':
+      return (
+        <span
+          className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-900/80 ${className}`}
+          title="University-mandated real-world case study"
+        >
+          <Briefcase className="w-3.5 h-3.5 text-purple-500" />
+          CASE STUDY
+        </span>
+      );
+  }
+};
+
+interface SourceBadgeProps {
+  source: SourceType;
+  label: string;
+  className?: string;
+}
+
+export const SourceBadge: React.FC<SourceBadgeProps> = ({ source, label, className = '' }) => {
+  if (source === 'UNIVERSITY_EXAM') {
+    return (
+      <span
+        className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-medium bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-900/80 ${className}`}
+        title="Direct question extracted from University Question Bank PDF"
+      >
+        <Landmark className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
+        {label}
+      </span>
+    );
+  }
+
+  return (
+    <span
+      className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 ${className}`}
+      title="Added to fulfill 100% syllabus topic coverage"
+    >
+      <CheckCircle2 className="w-3 h-3 text-blue-500" />
+      {label}
+    </span>
+  );
+};

@@ -1,0 +1,263 @@
+[
+  {
+    "id": 1,
+    "title": "Unit I – Data Structures & Algorithms: Searching, Sorting and Hashing",
+    "shortTitle": "Searching, Sorting & Hashing",
+    "description": "Foundational concepts of algorithmic analysis, asymptotic notations, step-count/frequency count, searching algorithms, sorting methods, hash tables, and collision resolution.",
+    "color": "blue",
+    "accent": "#2563eb",
+    "caseStudy": {
+      "title": "Employee Records Database Optimization",
+      "scenario": "A corporation with thousands of employees needs high-speed lookups by employee salary and batch sorting by department using array-based linear data structures.",
+      "learningOutcome": "Evaluate trade-offs between linear search vs binary search on sorted employee arrays, and implement in-place quick/merge sort algorithms."
+    },
+    "topics": [
+      {
+        "id": "u1-intro",
+        "title": "Introduction to Data Structures & Types",
+        "description": "Classification of data structures into primitive, non-primitive, linear, non-linear, static, and dynamic.",
+        "order": 1
+      },
+      {
+        "id": "u1-complexity",
+        "title": "Complexity Analysis & Asymptotic Notations",
+        "description": "Time complexity, space complexity, Big-O, Big-Omega, Big-Theta, step-count, and frequency count analysis.",
+        "order": 2
+      },
+      {
+        "id": "u1-searching",
+        "title": "Searching Algorithms",
+        "description": "Sequential (linear) search and binary search with iterative and recursive divide-and-conquer formulations.",
+        "order": 3
+      },
+      {
+        "id": "u1-sorting",
+        "title": "Sorting Algorithms",
+        "description": "Insertion sort, bubble sort, selection sort, merge sort, quick sort, and radix sort with pass-by-pass dry runs.",
+        "order": 4
+      },
+      {
+        "id": "u1-hashing",
+        "title": "Hash Tables & Collision Resolution",
+        "description": "Hash functions, collision resolution via chaining, open addressing (linear probing, quadratic probing, double hashing), and overflow handling.",
+        "order": 5
+      },
+      {
+        "id": "u1-casestudy",
+        "title": "Unit I Case Study: Employee Records Optimization",
+        "description": "Practical application of search and sort optimizations on fixed employee records.",
+        "order": 6
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Unit II – Memory Allocation and Linked List Operations",
+    "shortTitle": "Memory & Linked Lists",
+    "description": "Static vs dynamic memory allocation in C, Singly Linked List, Doubly Linked List, Circular Linked Lists, Polynomial manipulation, and Generalized Linked Lists (GLL).",
+    "color": "emerald",
+    "accent": "#059669",
+    "caseStudy": {
+      "title": "Dynamically Growing Employee Database",
+      "scenario": "Designing a scalable enterprise human resources directory that avoids array reallocation overheads using singly and doubly linked list pointer chains.",
+      "learningOutcome": "Master runtime node allocation, zero-memory-waste employee insertion, intermediate deletion, and efficient pointer traversal."
+    },
+    "topics": [
+      {
+        "id": "u2-memory",
+        "title": "Memory Allocation Concepts",
+        "description": "Static memory allocation (stack/data segment) vs Dynamic memory allocation (heap via malloc, calloc, realloc, free).",
+        "order": 1
+      },
+      {
+        "id": "u2-singly",
+        "title": "Singly Linked List as ADT & Operations",
+        "description": "Node structure, head pointer, traversal, search, insertion (beginning, middle/after pos P, end), and intermediate node deletion.",
+        "order": 2
+      },
+      {
+        "id": "u2-variations",
+        "title": "Doubly & Circular Linked Lists",
+        "description": "Doubly linked list (prev and next pointers), circular singly linked list, doubly circular linked list, and bidirectional traversal.",
+        "order": 3
+      },
+      {
+        "id": "u2-advanced",
+        "title": "Concatenation, Sorting & Polynomial Operations",
+        "description": "List concatenation, sorting pointer nodes, polynomial representation and algebraic addition of two polynomials using linked lists.",
+        "order": 4
+      },
+      {
+        "id": "u2-gll",
+        "title": "Generalized Linked List (GLL)",
+        "description": "Definition, representation of non-atomic lists, head and tail, depth calculation, and recursive list structures.",
+        "order": 5
+      },
+      {
+        "id": "u2-casestudy",
+        "title": "Unit II Case Study: Dynamic Enterprise HR Directory",
+        "description": "Real-world dynamic database implementation using linked lists.",
+        "order": 6
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Unit III – Linear Data Structures: Stacks and Queues",
+    "shortTitle": "Stacks & Queues",
+    "description": "LIFO Stack ADT, sequential and linked stack implementations, expression evaluation, infix-to-postfix conversion, recursion simulation, FIFO Queue ADT, Circular Queue, Deque, and Priority Queue.",
+    "color": "amber",
+    "accent": "#d97706",
+    "caseStudy": {
+      "title": "Backtracking & OS Priority Job Scheduling",
+      "scenario": "Simulating system execution stacks for backtracking maze solutions and an Operating System real-time job dispatcher with priority queues.",
+      "learningOutcome": "Understand activation records during recursive depth backtracking and priority queue scheduling algorithms."
+    },
+    "topics": [
+      {
+        "id": "u3-stack-adt",
+        "title": "Stack as ADT & Operations",
+        "description": "LIFO principle, push, pop, peek, isEmpty, isFull using sequential array and linked representation.",
+        "order": 1
+      },
+      {
+        "id": "u3-expressions",
+        "title": "Expression Evaluation & Conversion",
+        "description": "Infix, Prefix, and Postfix notations; Infix-to-Postfix conversion (Shunting-Yard algorithm) and Postfix evaluation with stack traces.",
+        "order": 2
+      },
+      {
+        "id": "u3-recursion",
+        "title": "Recursion & System Call Stack",
+        "description": "How compilers execute recursive functions using stack activation frames, local storage, return addresses, and unwinding.",
+        "order": 3
+      },
+      {
+        "id": "u3-queue-adt",
+        "title": "Queue ADT & Circular Queue",
+        "description": "FIFO queue, linear queue limitations (false overflow), circular queue with modulo arithmetic, front/rear pointers, enqueue and dequeue.",
+        "order": 4
+      },
+      {
+        "id": "u3-deque-priority",
+        "title": "Double-Ended Queue (Deque) & Priority Queue",
+        "description": "Input-restricted and output-restricted Deque, Ascending/Descending Priority Queues, array and heap representations.",
+        "order": 5
+      },
+      {
+        "id": "u3-casestudy",
+        "title": "Unit III Case Studies: Backtracking & Job Scheduling",
+        "description": "Backtracking algorithmic strategy via stack and job queue simulation in an automated service system.",
+        "order": 6
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Unit IV – Non-Linear Data Structure: Trees",
+    "shortTitle": "Trees & Binary Trees",
+    "description": "Tree terminologies, binary trees, binary tree traversals (Inorder, Preorder, Postorder, Level-order), Binary Search Trees (BST), Threaded Binary Trees, Optimal BST (OBST), Height-balanced AVL Trees, and Heap Trees.",
+    "color": "indigo",
+    "accent": "#4f46e5",
+    "caseStudy": {
+      "title": "Complexity Comparison: BST Search vs Linear Search",
+      "scenario": "Empirical and theoretical benchmark comparing linear array scans against balanced binary search trees across million-record datasets.",
+      "learningOutcome": "Analyze average case O(log n) vs worst case skewed O(n) performance and understand height-balanced self-balancing trees."
+    },
+    "topics": [
+      {
+        "id": "u4-tree-basics",
+        "title": "Tree Terminologies & Binary Tree Representations",
+        "description": "Root, leaf, parent, child, degree, depth, height, level; sequential array representation and doubly linked node representation.",
+        "order": 1
+      },
+      {
+        "id": "u4-traversals",
+        "title": "Binary Tree Traversals",
+        "description": "Recursive and iterative Inorder, Preorder, Postorder, and Level-order (BFS queue-based) tree traversal algorithms.",
+        "order": 2
+      },
+      {
+        "id": "u4-bst",
+        "title": "Binary Search Tree (BST)",
+        "description": "BST property, search algorithm, node insertion, and deletion with three cases (leaf, single child, two children with inorder successor/predecessor).",
+        "order": 3
+      },
+      {
+        "id": "u4-threaded",
+        "title": "Threaded Binary Search Trees (TBST)",
+        "description": "Single and double threading, replacing dangling NULL pointers with traversal threads, insertion, and stackless inorder traversal.",
+        "order": 4
+      },
+      {
+        "id": "u4-avl-obst",
+        "title": "AVL Trees & Optimal Binary Search Tree (OBST)",
+        "description": "Balance factor calculation, 4 rotation types (LL, RR, LR, RL) with numerical constructions; OBST dynamic programming formulation.",
+        "order": 5
+      },
+      {
+        "id": "u4-heaps",
+        "title": "Heap Trees & Heap Sort",
+        "description": "Max-heap, min-heap properties, array mapping, Heapify algorithm, and in-place Heap Sort algorithm.",
+        "order": 6
+      },
+      {
+        "id": "u4-casestudy",
+        "title": "Unit IV Case Study: BST Search vs Linear Search Benchmark",
+        "description": "Analytical comparison of linear and logarithmic search under skewed and balanced tree configurations.",
+        "order": 7
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Unit V – Non-Linear Data Structure: Graphs",
+    "shortTitle": "Graphs & Algorithms",
+    "description": "Graph terminologies, graph storage representations (Adjacency Matrix and Adjacency List), Graph Traversals (DFS and BFS), Minimum Spanning Trees (Prim's and Kruskal's), Shortest Path (Dijkstra and Floyd-Warshall), and Topological Ordering.",
+    "color": "rose",
+    "accent": "#e11d48",
+    "caseStudy": {
+      "title": "Social Network Interaction & Influence Analysis",
+      "scenario": "Modeling social media users as graph vertices and friendship/follows as edges to calculate degree centrality, mutual connections, and degrees of separation.",
+      "learningOutcome": "Apply BFS for shortest social hops and Dijkstra/Kruskal algorithms for minimal network communications infrastructure."
+    },
+    "topics": [
+      {
+        "id": "u5-graph-rep",
+        "title": "Graph Terminologies & Storage Representations",
+        "description": "Vertices, edges, directed/undirected, weighted, cyclic/acyclic, degree; space and time trade-offs between Adjacency Matrix and Adjacency List.",
+        "order": 1
+      },
+      {
+        "id": "u5-traversals",
+        "title": "Graph Traversals: DFS and BFS",
+        "description": "Depth First Search using recursion/stack and Breadth First Search using queue, with visited array tracking and connectivity checking.",
+        "order": 2
+      },
+      {
+        "id": "u5-mst",
+        "title": "Minimum Spanning Tree (MST): Prim's & Kruskal's",
+        "description": "Cut property, Prim's greedy algorithm (vertex growing), and Kruskal's greedy algorithm (edge sorting + Disjoint Set Union).",
+        "order": 3
+      },
+      {
+        "id": "u5-shortest-paths",
+        "title": "Shortest Paths: Dijkstra & Floyd-Warshall",
+        "description": "Dijkstra's single-source shortest path algorithm (relaxation steps) and Floyd-Warshall all-pairs shortest path dynamic programming iterations.",
+        "order": 4
+      },
+      {
+        "id": "u5-topological",
+        "title": "Topological Ordering & Directed Acyclic Graphs (DAG)",
+        "description": "Course prerequisite scheduling, indegree calculation, Kahn's algorithm using queue, and cycle detection.",
+        "order": 5
+      },
+      {
+        "id": "u5-casestudy",
+        "title": "Unit V Case Study: Social Network Analysis & Influence",
+        "description": "Real-world graph modeling of friendships, influence clusters, and 6-degrees-of-separation routing.",
+        "order": 6
+      }
+    ]
+  }
+]
