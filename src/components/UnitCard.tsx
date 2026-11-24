@@ -54,7 +54,7 @@ export const UnitCard: React.FC<UnitCardProps> = ({ unit, onSelectUnit }) => {
   return (
     <div
       onClick={() => onSelectUnit(unit.id)}
-      className={`group cursor-pointer rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 sm:p-6 transition-all duration-200 hover:shadow-md ${scheme.border} flex flex-col justify-between`}
+      className={`group cursor-pointer rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 lg:p-6 transition-all duration-200 hover:shadow-md ${scheme.border} flex flex-col justify-between`}
     >
       <div>
         <div className="flex items-center justify-between gap-2 mb-3">
@@ -75,7 +75,7 @@ export const UnitCard: React.FC<UnitCardProps> = ({ unit, onSelectUnit }) => {
           )}
         </div>
 
-        <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2">
+        <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2 break-words">
           {unit.shortTitle}
         </h3>
 
@@ -85,8 +85,8 @@ export const UnitCard: React.FC<UnitCardProps> = ({ unit, onSelectUnit }) => {
 
         {/* Case Study Tag */}
         {unit.caseStudy && (
-          <div className="flex items-center gap-1.5 text-xs text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-900/50 p-2 rounded-xl mb-4">
-            <Briefcase className="w-3.5 h-3.5 flex-shrink-0" />
+          <div className="flex items-center gap-1.5 text-xs text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-900/50 p-2 rounded-xl mb-4 min-w-0">
+            <Briefcase className="w-3.5 h-3.5 shrink-0" />
             <span className="truncate font-medium">{unit.caseStudy.title}</span>
           </div>
         )}
@@ -102,7 +102,7 @@ export const UnitCard: React.FC<UnitCardProps> = ({ unit, onSelectUnit }) => {
           className="mb-3"
         />
 
-        <div className="flex items-center justify-between text-xs font-semibold text-blue-600 dark:text-blue-400 group-hover:translate-x-0.5 transition-transform">
+        <div className="flex items-center justify-between text-xs font-semibold text-blue-600 dark:text-blue-400 group-hover:translate-x-0.5 transition-transform min-h-[32px]">
           <span className="flex items-center gap-1">
             <BookMarked className="w-3.5 h-3.5" /> Study Unit {unit.id}
           </span>

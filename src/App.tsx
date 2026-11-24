@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import React, { useState, useEffect } from 'react';
 import { useAuth } from './context/AuthContext';
 import { useProgress } from './context/ProgressContext';
@@ -71,7 +72,7 @@ export const App: React.FC = () => {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8">
         {activeTab === 'dashboard' && (
           <Dashboard
             onSelectUnit={(unitId) => setActiveTab(`unit-${unitId}`)}
@@ -94,28 +95,29 @@ export const App: React.FC = () => {
 
       {/* Global Quick Search Modal */}
       {searchModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in duration-150">
-          <div className="w-full max-w-2xl bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden">
-            <div className="p-4 border-b border-slate-100 dark:border-slate-800 flex items-center gap-3">
-              <Search className="w-5 h-5 text-slate-400" />
+        <div className="fixed inset-0 z-50 flex items-start justify-center pt-12 sm:pt-20 px-3 sm:px-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in duration-150">
+          <div className="w-full max-w-2xl bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden max-h-[85vh] flex flex-col">
+            <div className="p-3.5 sm:p-4 border-b border-slate-100 dark:border-slate-800 flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
+              <Search className="w-5 h-5 text-slate-400 flex-shrink-0" />
               <input
                 autoFocus
                 type="text"
                 value={globalSearchTerm}
                 onChange={(e) => setGlobalSearchTerm(e.target.value)}
                 placeholder="Jump to topic, algorithm (e.g. Radix Sort, TBST, Prim, AVL)..."
-                className="w-full bg-transparent text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none"
+                className="w-full bg-transparent text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none"
               />
               <button
                 onClick={() => setSearchModalOpen(false)}
-                className="p-1 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 min-h-[36px] min-w-[36px] flex items-center justify-center"
+                aria-label="Close search"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="p-4 space-y-2 max-h-96 overflow-y-auto">
-              <div className="text-xs font-bold uppercase tracking-wider text-slate-400 px-2 py-1">
+            <div className="p-3.5 sm:p-4 space-y-2 overflow-y-auto">
+              <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 px-1 py-1">
                 Quick Unit Navigation
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
@@ -126,7 +128,7 @@ export const App: React.FC = () => {
                       setActiveTab(`unit-${u.id}`);
                       setSearchModalOpen(false);
                     }}
-                    className="p-2.5 rounded-xl text-left bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-blue-950/60 transition-colors border border-slate-200 dark:border-slate-700/60"
+                    className="p-2 sm:p-2.5 rounded-xl text-left bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-blue-950/60 transition-colors border border-slate-200 dark:border-slate-700/60 min-h-[44px]"
                   >
                     <span className="block text-[10px] font-bold text-blue-600 dark:text-blue-400">
                       UNIT {u.id}
@@ -144,7 +146,7 @@ export const App: React.FC = () => {
                     setActiveTab('all-questions');
                     setSearchModalOpen(false);
                   }}
-                  className="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-blue-600 text-white hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                  className="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-blue-600 text-white hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 min-h-[44px]"
                 >
                   <Search className="w-4 h-4" /> Open Full Question Bank with Multi-Filters
                 </button>
@@ -183,6 +185,7 @@ export const App: React.FC = () => {
           </div>
         </div>
       </footer>
+      <Analytics />
     </div>
   );
 };

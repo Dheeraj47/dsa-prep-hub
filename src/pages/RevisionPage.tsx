@@ -23,9 +23,9 @@ export const RevisionPage: React.FC = () => {
     <div className="space-y-6 animate-in fade-in duration-300">
       {/* Header */}
       <div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight flex items-center gap-2.5">
-          <RotateCcw className="w-7 h-7 text-amber-500" />
-          Revision & Saved Hub
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight flex items-center gap-2.5">
+          <RotateCcw className="w-6 h-6 sm:w-7 sm:h-7 text-amber-500 shrink-0" />
+          <span>Revision & Saved Hub</span>
         </h1>
         <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
           Review your bookmarked questions and target high-yield incomplete exam topics before the test.
@@ -33,29 +33,29 @@ export const RevisionPage: React.FC = () => {
       </div>
 
       {/* Tabs */}
-      <div className="flex items-center gap-3 border-b border-slate-200 dark:border-slate-800">
+      <div className="flex items-center gap-2 sm:gap-3 border-b border-slate-200 dark:border-slate-800 overflow-x-auto scrollbar-none touch-pan-x -mx-1 px-1 sm:mx-0 sm:px-0">
         <button
           onClick={() => setActiveTab('BOOKMARKS')}
-          className={`pb-3 text-sm font-bold flex items-center gap-2 border-b-2 transition-colors ${
+          className={`min-h-[44px] pb-3 text-xs sm:text-sm font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
             activeTab === 'BOOKMARKS'
               ? 'border-amber-500 text-amber-600 dark:text-amber-400'
               : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'
           }`}
         >
-          <Bookmark className="w-4 h-4" />
-          Saved Bookmarks ({bookmarkedQuestions.length})
+          <Bookmark className="w-4 h-4 shrink-0" />
+          <span>Saved Bookmarks ({bookmarkedQuestions.length})</span>
         </button>
 
         <button
           onClick={() => setActiveTab('INCOMPLETE_VERY_IMP')}
-          className={`pb-3 text-sm font-bold flex items-center gap-2 border-b-2 transition-colors ${
+          className={`min-h-[44px] pb-3 text-xs sm:text-sm font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
             activeTab === 'INCOMPLETE_VERY_IMP'
               ? 'border-rose-500 text-rose-600 dark:text-rose-400'
               : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'
           }`}
         >
-          <Award className="w-4 h-4 text-rose-500" />
-          Incomplete Very Important ({incompleteVeryImportant.length})
+          <Award className="w-4 h-4 text-rose-500 shrink-0" />
+          <span>Incomplete Very Important ({incompleteVeryImportant.length})</span>
         </button>
       </div>
 
@@ -63,7 +63,7 @@ export const RevisionPage: React.FC = () => {
       {activeTab === 'BOOKMARKS' && (
         <div className="space-y-4">
           {bookmarkedQuestions.length === 0 ? (
-            <div className="text-center py-16 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8">
+            <div className="text-center py-12 sm:py-16 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8">
               <Bookmark className="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-3" />
               <h3 className="text-base font-bold text-slate-800 dark:text-slate-200">
                 No Bookmarked Questions Yet
@@ -83,7 +83,7 @@ export const RevisionPage: React.FC = () => {
       {activeTab === 'INCOMPLETE_VERY_IMP' && (
         <div className="space-y-4">
           {incompleteVeryImportant.length === 0 ? (
-            <div className="text-center py-16 bg-emerald-50/50 dark:bg-emerald-950/20 rounded-3xl border border-emerald-200 dark:border-emerald-900 p-8">
+            <div className="text-center py-12 sm:py-16 bg-emerald-50/50 dark:bg-emerald-950/20 rounded-3xl border border-emerald-200 dark:border-emerald-900 p-6 sm:p-8">
               <Sparkles className="w-12 h-12 text-emerald-500 mx-auto mb-3" />
               <h3 className="text-base font-bold text-emerald-900 dark:text-emerald-200">
                 Outstanding Achievement! 🎉

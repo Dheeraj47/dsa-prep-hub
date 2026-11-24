@@ -117,24 +117,24 @@ export const AllQuestionsPage: React.FC = () => {
   return (
     <div className="space-y-6 animate-in fade-in duration-300">
       {/* Page Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight flex items-center gap-2.5">
-            <BookOpen className="w-7 h-7 text-blue-600 dark:text-blue-400" />
-            Complete Question Bank
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight flex items-center gap-2.5">
+            <BookOpen className="w-6 h-6 sm:w-7 sm:h-7 text-blue-600 dark:text-blue-400 shrink-0" />
+            <span>Complete Question Bank</span>
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-            Browse, search, and filter all 61 university questions, case studies, and syllabus additions.
+            Browse, search, and filter all 67 university questions, case studies, and syllabus additions.
           </p>
         </div>
 
-        <span className="self-start sm:self-center px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+        <span className="self-start sm:self-center px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 whitespace-nowrap">
           Showing {filteredAndSortedQuestions.length} of {questions.length} Questions
         </span>
       </div>
 
       {/* Search and Filters Control Center */}
-      <div className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs space-y-4">
+      <div className="p-3.5 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs space-y-4">
         <SearchBar
           value={searchQuery}
           onChange={setSearchQuery}
@@ -142,14 +142,14 @@ export const AllQuestionsPage: React.FC = () => {
         />
 
         {/* Filter Pills Scrollable Row */}
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-2 text-xs scrollbar-none">
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-2 text-xs scrollbar-none touch-pan-x -mx-1 px-1 sm:mx-0 sm:px-0">
           {filterTabs.map((tab) => {
             const isActive = activeFilter === tab.id;
             return (
               <button
                 key={tab.id}
                 onClick={() => setActiveFilter(tab.id)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-semibold whitespace-nowrap transition-colors flex-shrink-0 ${
+                className={`min-h-[36px] flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-semibold whitespace-nowrap transition-colors shrink-0 cursor-pointer ${
                   isActive
                     ? 'bg-blue-600 text-white shadow-xs'
                     : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
@@ -158,7 +158,7 @@ export const AllQuestionsPage: React.FC = () => {
                 <span>{tab.label}</span>
                 {tab.count !== undefined && (
                   <span
-                    className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold ${
+                    className={`px-1.5 py-0.5 rounded-full text-[10px] font-bold ${
                       isActive ? 'bg-blue-700 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
                     }`}
                   >
@@ -171,15 +171,15 @@ export const AllQuestionsPage: React.FC = () => {
         </div>
 
         {/* Secondary controls: Unit filter and Sort */}
-        <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs">
           {/* Unit selection */}
           <div className="flex items-center gap-1.5 flex-wrap">
-            <span className="text-slate-500 font-semibold mr-1">Unit:</span>
+            <span className="text-slate-500 font-semibold mr-1 shrink-0">Unit:</span>
             {(['ALL', 1, 2, 3, 4, 5] as const).map((u) => (
               <button
                 key={u}
                 onClick={() => setUnitFilter(u)}
-                className={`px-2.5 py-1 rounded-lg font-medium transition-colors ${
+                className={`min-h-[32px] px-2.5 py-1 rounded-lg font-medium transition-colors cursor-pointer ${
                   unitFilter === u
                     ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-bold'
                     : 'bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100'
@@ -191,12 +191,12 @@ export const AllQuestionsPage: React.FC = () => {
           </div>
 
           {/* Sort order */}
-          <div className="flex items-center gap-2">
-            <span className="text-slate-500 font-semibold">Sort:</span>
+          <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto">
+            <span className="text-slate-500 font-semibold shrink-0">Sort:</span>
             <select
               value={sortOption}
               onChange={(e) => setSortOption(e.target.value as SortOption)}
-              className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-2.5 py-1 text-slate-700 dark:text-slate-300 font-medium focus:outline-none"
+              className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-2.5 py-1.5 text-slate-700 dark:text-slate-300 font-medium focus:outline-none min-h-[34px] flex-1 sm:flex-none cursor-pointer"
             >
               <option value="DEFAULT">Question Number</option>
               <option value="IMPORTANCE">Importance Tier (High to Low)</option>
@@ -208,7 +208,7 @@ export const AllQuestionsPage: React.FC = () => {
 
       {/* Questions Stack */}
       {filteredAndSortedQuestions.length === 0 ? (
-        <div className="text-center py-16 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8">
+        <div className="text-center py-12 sm:py-16 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8">
           <BookOpen className="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-3" />
           <h3 className="text-base font-bold text-slate-800 dark:text-slate-200">
             No questions match your current search or filters.
@@ -222,7 +222,7 @@ export const AllQuestionsPage: React.FC = () => {
               setActiveFilter('ALL');
               setUnitFilter('ALL');
             }}
-            className="mt-4 px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+            className="mt-4 min-h-[40px] px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white hover:bg-blue-700 transition-colors cursor-pointer"
           >
             Reset All Filters
           </button>

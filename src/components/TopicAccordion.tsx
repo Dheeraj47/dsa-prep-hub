@@ -32,14 +32,14 @@ export const TopicAccordion: React.FC<TopicAccordionProps> = ({
       <button
         onClick={() => setIsOpen(!isOpen)}
         type="button"
-        className="w-full p-4 sm:p-5 flex items-center justify-between text-left hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors"
+        className="w-full p-3.5 sm:p-5 flex items-center justify-between text-left hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors cursor-pointer"
       >
-        <div className="flex-1 min-w-0 pr-4">
+        <div className="flex-1 min-w-0 pr-2 sm:pr-4">
           <div className="flex items-center gap-2 mb-1">
-            <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-              {topic.title}
+            <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100 flex items-center gap-1.5 sm:gap-2 break-words">
+              <span>{topic.title}</span>
               {isAllDone && (
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 fill-emerald-100 dark:fill-emerald-950 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-500 fill-emerald-100 dark:fill-emerald-950 shrink-0" />
               )}
             </h3>
           </div>
@@ -48,26 +48,26 @@ export const TopicAccordion: React.FC<TopicAccordionProps> = ({
           </p>
 
           {/* Mini progress indicator */}
-          <div className="flex items-center gap-3">
-            <div className="w-28 sm:w-40 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="w-16 xs:w-24 sm:w-36 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden shrink-0">
               <div
                 className="h-full bg-blue-600 dark:bg-blue-500 rounded-full transition-all duration-300"
                 style={{ width: `${topicProg.percentage}%` }}
               />
             </div>
-            <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 tabular-nums">
+            <span className="text-[11px] sm:text-xs font-semibold text-slate-700 dark:text-slate-300 tabular-nums whitespace-nowrap">
               {topicProg.completed}/{topicProg.total} ({topicProg.percentage}%)
             </span>
           </div>
         </div>
 
-        <div className="p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 bg-slate-100 dark:bg-slate-800">
-          {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+        <div className="min-w-[36px] min-h-[36px] flex items-center justify-center p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 bg-slate-100 dark:bg-slate-800 shrink-0">
+          {isOpen ? <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5" /> : <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5" />}
         </div>
       </button>
 
       {isOpen && (
-        <div className="p-4 sm:p-5 pt-0 space-y-3 border-t border-slate-100 dark:border-slate-800/80 bg-slate-50/30 dark:bg-slate-900/40">
+        <div className="p-2.5 xs:p-3.5 sm:p-5 pt-0 space-y-3 border-t border-slate-100 dark:border-slate-800/80 bg-slate-50/30 dark:bg-slate-900/40">
           {questions.length === 0 ? (
             <p className="text-xs text-slate-400 py-3 italic">No questions currently in this topic.</p>
           ) : (

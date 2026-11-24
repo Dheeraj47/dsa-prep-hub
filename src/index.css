@@ -8,6 +8,15 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    min-width: 320px;
+    -webkit-tap-highlight-color: transparent;
   }
 
   /* Custom scrollbar */
@@ -33,10 +42,36 @@
   }
 }
 
+/* Horizontal code & table scrollbar with touch momentum */
+.code-scrollbar {
+  -webkit-overflow-scrolling: touch;
+}
+
 .code-scrollbar::-webkit-scrollbar {
   height: 5px;
+}
+.code-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: 4px;
 }
 .code-scrollbar::-webkit-scrollbar-thumb {
   background: #475569;
   border-radius: 4px;
+}
+.code-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Responsive utility helpers */
+@layer utilities {
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .touch-pan-x {
+    touch-action: pan-x;
+  }
 }

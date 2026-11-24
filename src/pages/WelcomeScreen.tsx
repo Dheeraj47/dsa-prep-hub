@@ -37,13 +37,13 @@ export const WelcomeScreen: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col justify-between selection:bg-blue-500 selection:text-white transition-colors duration-200">
       {/* Top Bar with Brand & Theme Toggle */}
-      <header className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-6 flex items-center justify-between">
+      <header className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20 shrink-0">
             <BookOpen className="w-5 h-5" />
           </div>
           <div>
-            <span className="text-base font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="text-sm sm:text-base font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               DSA PREP HUB
             </span>
             <span className="block text-[10px] text-slate-400 font-semibold uppercase tracking-wider">
@@ -56,19 +56,19 @@ export const WelcomeScreen: React.FC = () => {
       </header>
 
       {/* Main Centered Welcome Card */}
-      <main className="w-full max-w-md mx-auto px-4 py-8">
-        <div className="relative overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl p-7 sm:p-9 transition-all">
+      <main className="w-full max-w-md mx-auto px-3.5 sm:px-4 py-6 sm:py-8">
+        <div className="relative overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl p-5 xs:p-7 sm:p-9 transition-all">
           {/* Subtle Ambient Decorative Gradient Glows */}
           <div className="absolute -top-16 -right-16 w-36 h-36 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
           <div className="absolute -bottom-16 -left-16 w-36 h-36 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none" />
 
           {/* Header & Logo */}
-          <div className="relative z-10 text-center mb-7">
-            <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-blue-700 text-white shadow-lg shadow-blue-500/25 mb-4">
-              <GraduationCap className="w-7 h-7" />
+          <div className="relative z-10 text-center mb-6 sm:mb-7">
+            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-blue-700 text-white shadow-lg shadow-blue-500/25 mb-3 sm:mb-4">
+              <GraduationCap className="w-6 h-6 sm:w-7 sm:h-7" />
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
               DSA PREP HUB
             </h1>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2 font-medium leading-relaxed">
@@ -101,7 +101,7 @@ export const WelcomeScreen: React.FC = () => {
                     if (error) setError('');
                   }}
                   placeholder="e.g. Alex Sharma"
-                  className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-900 dark:text-white placeholder-slate-400 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  className="w-full pl-10 pr-4 py-3 min-h-[48px] rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-900 dark:text-white placeholder-slate-400 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                 />
               </div>
 
@@ -116,7 +116,7 @@ export const WelcomeScreen: React.FC = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-3.5 px-4 rounded-xl font-bold text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 active:scale-[0.99] text-white shadow-md shadow-blue-500/25 transition-all flex items-center justify-center gap-2 group cursor-pointer"
+              className="w-full py-3.5 px-4 min-h-[48px] rounded-xl font-bold text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 active:scale-[0.99] text-white shadow-md shadow-blue-500/25 transition-all flex items-center justify-center gap-2 group cursor-pointer"
             >
               <span>Start Studying</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -131,21 +131,21 @@ export const WelcomeScreen: React.FC = () => {
           </form>
 
           {/* Feature Highlights Pills */}
-          <div className="relative z-10 mt-7 pt-6 border-t border-slate-100 dark:border-slate-800/80 grid grid-cols-2 gap-2 text-[11px] text-slate-500 dark:text-slate-400 font-medium">
+          <div className="relative z-10 mt-6 sm:mt-7 pt-5 sm:pt-6 border-t border-slate-100 dark:border-slate-800/80 grid grid-cols-1 xs:grid-cols-2 gap-2 text-[11px] text-slate-500 dark:text-slate-400 font-medium">
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
               <span>5 Complete Units</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
               <span>67 Exam Questions</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
               <span>Isolated Local Progress</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
               <span>Dry Runs & Complexity</span>
             </div>
           </div>
